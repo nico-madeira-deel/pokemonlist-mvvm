@@ -1,0 +1,6 @@
+framework module Pods_AppNicoMVVM {
+  umbrella header "Pods-AppNicoMVVM-umbrella.h"
+
+  export *
+  module * { export * }
+}
