@@ -10,13 +10,28 @@
         <!--Pokemon Detail View Controller-->
         <scene sceneID="xOZ-Mp-hge">
             <objects>
-                <viewController id="1rP-v5-DGL" customClass="PokemonDetailViewController" customModule="AppNicoMVVM" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HDq-jN-L7W">
+                <viewController storyboardIdentifier="PokemonDetailViewController" id="1rP-v5-DGL" customClass="PokemonDetailViewController" customModule="AppNicoMVVM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="PokemonDetail" id="HDq-jN-L7W">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDd-ZH-bro">
+                                <rect key="frame" x="186" y="442.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="eDd-ZH-bro" firstAttribute="centerX" secondItem="CJ0-Kd-t3T" secondAttribute="centerX" id="AWp-eG-lkB"/>
+                            <constraint firstItem="eDd-ZH-bro" firstAttribute="centerY" secondItem="CJ0-Kd-t3T" secondAttribute="centerY" id="lYu-hz-dFH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CJ0-Kd-t3T"/>
                     </view>
+                    <connections>
+                        <outlet property="pokemonName" destination="eDd-ZH-bro" id="jq0-uc-6iv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4I-jq-Qx9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
