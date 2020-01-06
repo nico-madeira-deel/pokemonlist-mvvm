@@ -11,7 +11,7 @@ import RxSwift
 
 protocol PokemonDetailViewModelProtocol: AnyObject {
     var networking: PokemonDetailNetworking { get set }
-    func fetchPokemonDetail(pokemon: String)
+    func fetchPokemonDetail()
 }
 
 class PokemonDetailViewModel: PokemonDetailViewModelProtocol {
@@ -22,15 +22,15 @@ class PokemonDetailViewModel: PokemonDetailViewModelProtocol {
     var errorMessage: BehaviorSubject<Error?>
     
     // MARK: - Lifecycle
-    init(networking: PokemonDetailNetworking) {
+    init(networking: PokemonDetailNetworking, pokemon: Pokemon) {
         self.networking = networking
         self.pokemonDetail = BehaviorSubject(value: nil)
         self.errorMessage = BehaviorSubject(value: nil)
     }
     
     // MARK: - Functions
-    func fetchPokemonDetail(pokemon: String) {
-        networking.getPokemonDetail(pokemon: pokemon) { [weak self] result in
+    func fetchPokemonDetail() {
+        networking.getPokemonDetail(pokemon: pokemon.name) { [weak self] result in
             switch result {
             case .success(let pokemonDetailResponse):
                 self?.pokemonDetail.onNext(pokemonDetailResponse)

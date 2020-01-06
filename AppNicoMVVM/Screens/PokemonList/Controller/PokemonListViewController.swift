@@ -53,7 +53,7 @@ class PokemonListViewController: UIViewController {
         if segue.identifier == goToDetailSegueIdentifier,
             let destination = segue.destination as? PokemonDetailViewController,
             let pokemon = sender as? Pokemon {
-            
+            print(pokemon.imageUrl)
             destination.pokemon = pokemon
         }
     }

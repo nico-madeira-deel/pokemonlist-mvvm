@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct Pokemon: Decodable {
+class Pokemon: Decodable {
     
     // MARK: - Properties
     let name: String
-    let imageUrl: String?
+    var imageUrl: String?
     let height: Int?
     let weight: Int?
     let id: Int?

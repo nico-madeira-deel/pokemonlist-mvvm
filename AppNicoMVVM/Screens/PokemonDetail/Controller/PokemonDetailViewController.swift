@@ -30,7 +30,7 @@ class PokemonDetailViewController: UIViewController {
     
     // MARK: - Functions
     private func setupBind() {
-        viewModel = PokemonDetailViewModel(networking: networking)
+        viewModel = PokemonDetailViewModel(networking: networking, pokemon: pokemon)
   
         viewModel.pokemonDetail.subscribe({ [weak self] response in
             guard let unElement = response.element, let unPokemon = unElement else { return }
@@ -39,6 +39,6 @@ class PokemonDetailViewController: UIViewController {
     }
     
     private func setupFetch() {
-        viewModel.fetchPokemonDetail(pokemon: pokemon.name)
+        viewModel.fetchPokemonDetail()
     }
 }
