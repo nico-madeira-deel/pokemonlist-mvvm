@@ -10,12 +10,12 @@ import Foundation
 import Alamofire
 
 protocol PokemonDetailNetworkingProtocol: AnyObject {
-    func getPokemonDetail(pokemon: String, completion: @escaping (Result<PokemonDetailResponse>) -> Void)
+    func getPokemonDetail(pokemon: String, completion: @escaping (Result<Pokemon>) -> Void)
 }
 
 
 class PokemonDetailNetworking: PokemonDetailNetworkingProtocol {
-    func getPokemonDetail(pokemon: String, completion: @escaping (Result<PokemonDetailResponse>) -> Void) {
+    func getPokemonDetail(pokemon: String, completion: @escaping (Result<Pokemon>) -> Void) {
         request("https://pokeapi.co/api/v2/pokemon/\(pokemon)",
             method: .get,
             encoding: URLEncoding.default).responseJSON { response in
@@ -23,8 +23,8 @@ class PokemonDetailNetworking: PokemonDetailNetworkingProtocol {
                 case .success:
                     do {
                         let decoder = JSONDecoder()
-                        let pokemonDetailResponse = try decoder.decode(PokemonDetailResponse.self, from: response.data!)
-                    completion(Result.success(pokemonDetailResponse))
+                        let pokemonDetail = try decoder.decode(Pokemon.self, from: response.data!)
+                        completion(Result.success(pokemonDetail))
                     } catch let error {
                         print("deu ruim de novo", error)
                         completion(Result.error(error))

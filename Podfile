@@ -5,4 +5,6 @@ target 'AppNicoMVVM' do
   use_frameworks!
   pod 'Alamofire'
   pod 'Kingfisher'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 end

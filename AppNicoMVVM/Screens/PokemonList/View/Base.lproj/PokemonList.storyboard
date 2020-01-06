@@ -51,7 +51,6 @@
                                         <connections>
                                             <outlet property="pokemonImage" destination="ikG-r3-fgQ" id="312-nY-N7N"/>
                                             <outlet property="pokemonName" destination="D6a-Qj-Ylj" id="AnQ-DW-w5A"/>
-                                            <segue destination="Hgd-gX-FdF" kind="show" identifier="PokemonDetail" id="QC8-7z-59O"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -69,21 +68,22 @@
                     <navigationItem key="navigationItem" id="Ji1-AP-CdR"/>
                     <connections>
                         <outlet property="tableView" destination="9pv-d2-QhN" id="PJe-nG-lFP"/>
+                        <segue destination="Hgd-gX-FdF" kind="show" identifier="goToDetail" id="GnZ-Pc-j1i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="138.61607142857142"/>
         </scene>
-        <!--PokemonDetailViewController-->
+        <!--PokemonDetail-->
         <scene sceneID="14c-VA-lUd">
             <objects>
-                <viewControllerPlaceholder storyboardName="PokemonDetail" referencedIdentifier="PokemonDetailViewController" id="Hgd-gX-FdF" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="PokemonDetail" id="Hgd-gX-FdF" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="jfx-YA-RsA"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Go3-OW-yi2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1713" y="102"/>
+            <point key="canvasLocation" x="1592" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kap-1b-h6C">

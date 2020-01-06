@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1rP-v5-DGL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -24,13 +24,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="eDd-ZH-bro" firstAttribute="centerX" secondItem="CJ0-Kd-t3T" secondAttribute="centerX" id="AWp-eG-lkB"/>
-                            <constraint firstItem="eDd-ZH-bro" firstAttribute="centerY" secondItem="CJ0-Kd-t3T" secondAttribute="centerY" id="lYu-hz-dFH"/>
+                            <constraint firstItem="eDd-ZH-bro" firstAttribute="centerX" secondItem="CJ0-Kd-t3T" secondAttribute="centerX" id="nTu-bZ-z43"/>
+                            <constraint firstItem="eDd-ZH-bro" firstAttribute="centerY" secondItem="CJ0-Kd-t3T" secondAttribute="centerY" id="vEm-Rz-52K"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CJ0-Kd-t3T"/>
                     </view>
                     <connections>
-                        <outlet property="pokemonName" destination="eDd-ZH-bro" id="jq0-uc-6iv"/>
+                        <outlet property="pokemonName" destination="eDd-ZH-bro" id="Vi3-aK-Pw8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4I-jq-Qx9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

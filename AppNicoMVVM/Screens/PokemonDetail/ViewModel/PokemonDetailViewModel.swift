@@ -10,7 +10,6 @@ import Foundation
 
 protocol PokemonDetailViewModelProtocol: AnyObject {
     var networking: PokemonDetailNetworking { get set }
-    var pokemonDetail: PokemonDetail? { get set }
     func fetchPokemonDetail(pokemon: String)
 }
 
@@ -18,11 +17,12 @@ class PokemonDetailViewModel: PokemonDetailViewModelProtocol {
     
     // MARK: - Properties
     var networking: PokemonDetailNetworking
-    var pokemonDetail: PokemonDetail?
+    var pokemonDetail: Observable<Pokemon?>
     
     // MARK: - Lifecycle
     init(networking: PokemonDetailNetworking) {
         self.networking = networking
+        self.pokemonDetail = Observable(nil)
     }
     
     // MARK: - Functions
@@ -30,7 +30,7 @@ class PokemonDetailViewModel: PokemonDetailViewModelProtocol {
         networking.getPokemonDetail(pokemon: pokemon) { [weak self] result in
             switch result {
             case .success(let pokemonDetailResponse):
-                self?.pokemonDetail = pokemonDetailResponse.result
+                self?.pokemonDetail.value = pokemonDetailResponse
             case .error(let error):
                 print("deu ruim", error)
             }

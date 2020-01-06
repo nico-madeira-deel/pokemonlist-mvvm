@@ -13,10 +13,16 @@ struct Pokemon: Decodable {
     // MARK: - Properties
     let name: String
     let imageUrl: String?
+    let height: Int?
+    let weight: Int?
+    let id: Int?
     
     // MARK: - Initializer
     init(name: String) {
         self.name = name
         self.imageUrl = "https://play.pokemonshowdown.com/sprites/gen5/\(name).png"
+        self.height = nil
+        self.weight = nil
+        self.id = nil
     }
 }

@@ -18,7 +18,7 @@ class PokemonListViewController: UIViewController {
     private let networking = PokemonListNetworking()
     private let paging = Paging(limit: 20)
     private let pokemonCellIdentifier = "pokemonCell"
-    private let goToPokemonDetailIdentifier = "PokemonDetail"
+    private let goToDetailSegueIdentifier = "goToDetail"
     
     // MARK: - Lifecyle
     override func viewDidLoad() {
@@ -47,10 +47,10 @@ class PokemonListViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == goToPokemonDetailIdentifier,
+        if segue.identifier == goToDetailSegueIdentifier,
             let destination = segue.destination as? PokemonDetailViewController,
-            let pokemon = viewModel.pokemonPerLine(row: tableView.indexPathForSelectedRow!.row)
-        {
+            let pokemon = sender as? Pokemon {
+            
             destination.pokemon = pokemon
         }
     }
@@ -84,5 +84,11 @@ extension PokemonListViewController: UITableViewDataSource {
 extension PokemonListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let unPokemon = viewModel.pokemonPerLine(row: indexPath.row) {
+            performSegue(withIdentifier: goToDetailSegueIdentifier, sender: unPokemon)
+        }
     }
 }
