@@ -16,10 +16,9 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var pokemonImage: UIImageView!
     
     // MARK: - Properties
-    var pokemon: Pokemon!
     private var viewModel: PokemonDetailViewModel!
     private var networking = PokemonDetailNetworking()
-    var pokemonDetail: Pokemon!
+    var pokemon: Pokemon!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -31,20 +30,18 @@ class PokemonDetailViewController: UIViewController {
     
     // MARK: - Functions
     private func setupBind() {
-        viewModel = PokemonDetailViewModel(networking: networking)
+        viewModel = PokemonDetailViewModel(networking: networking, pokemon: pokemon)
     }
     
     private func setupFetch() {
-        if ((pokemon?.name) != nil) {
-            viewModel.fetchPokemonDetail(pokemon: pokemon.name)
-        }
+        viewModel.fetchPokemonDetail()
     }
     
     private func setupPokemonDetail() {
         viewModel.pokemonDetail.bind { [weak self] pokemonDetails in
             guard let strongSelf = self, let unPokemonDetail = pokemonDetails else { return }
-            strongSelf.pokemonDetail = unPokemonDetail
             strongSelf.pokemonName.text = unPokemonDetail.name
+            print(unPokemonDetail)
         }
     }
 }
