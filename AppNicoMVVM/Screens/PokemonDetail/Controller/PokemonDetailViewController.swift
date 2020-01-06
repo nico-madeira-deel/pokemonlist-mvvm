@@ -8,43 +8,37 @@
 
 import UIKit
 import Kingfisher
+import RxSwift
 
 class PokemonDetailViewController: UIViewController {
     
     // MARK - Outlets
     @IBOutlet weak var pokemonName: UILabel!
-    @IBOutlet weak var pokemonImage: UIImageView!
     
     // MARK: - Properties
-    var pokemon: Pokemon!
     private var viewModel: PokemonDetailViewModel!
     private var networking = PokemonDetailNetworking()
-    var pokemonDetail: Pokemon!
+    private let disposeBag = DisposeBag()
+    var pokemon: Pokemon!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBind()
         setupFetch()
-        setupPokemonDetail()
     }
     
     // MARK: - Functions
     private func setupBind() {
         viewModel = PokemonDetailViewModel(networking: networking)
+  
+        viewModel.pokemonDetail.subscribe({ [weak self] response in
+            guard let unElement = response.element, let unPokemon = unElement else { return }
+            self?.pokemonName.text = unPokemon.name
+        }).disposed(by: disposeBag)
     }
     
     private func setupFetch() {
-        if ((pokemon?.name) != nil) {
-            viewModel.fetchPokemonDetail(pokemon: pokemon.name)
-        }
-    }
-    
-    private func setupPokemonDetail() {
-        viewModel.pokemonDetail.bind { [weak self] pokemonDetails in
-            guard let strongSelf = self, let unPokemonDetail = pokemonDetails else { return }
-            strongSelf.pokemonDetail = unPokemonDetail
-            strongSelf.pokemonName.text = unPokemonDetail.name
-        }
+        viewModel.fetchPokemonDetail(pokemon: pokemon.name)
     }
 }

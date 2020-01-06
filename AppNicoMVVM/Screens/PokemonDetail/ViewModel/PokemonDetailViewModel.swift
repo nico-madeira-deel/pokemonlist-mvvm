@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol PokemonDetailViewModelProtocol: AnyObject {
     var networking: PokemonDetailNetworking { get set }
@@ -17,12 +18,14 @@ class PokemonDetailViewModel: PokemonDetailViewModelProtocol {
     
     // MARK: - Properties
     var networking: PokemonDetailNetworking
-    var pokemonDetail: Observable<Pokemon?>
+    var pokemonDetail: BehaviorSubject<Pokemon?>
+    var errorMessage: BehaviorSubject<Error?>
     
     // MARK: - Lifecycle
     init(networking: PokemonDetailNetworking) {
         self.networking = networking
-        self.pokemonDetail = Observable(nil)
+        self.pokemonDetail = BehaviorSubject(value: nil)
+        self.errorMessage = BehaviorSubject(value: nil)
     }
     
     // MARK: - Functions
@@ -30,9 +33,9 @@ class PokemonDetailViewModel: PokemonDetailViewModelProtocol {
         networking.getPokemonDetail(pokemon: pokemon) { [weak self] result in
             switch result {
             case .success(let pokemonDetailResponse):
-                self?.pokemonDetail.value = pokemonDetailResponse
+                self?.pokemonDetail.onNext(pokemonDetailResponse)
             case .error(let error):
-                print("deu ruim", error)
+                self?.errorMessage.onNext(error)
             }
         }
     }

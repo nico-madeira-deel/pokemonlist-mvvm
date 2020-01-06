@@ -11,7 +11,6 @@
 		02639F7B23BFC4480098A823 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02639F7A23BFC4480098A823 /* PokemonDetailViewController.swift */; };
 		0296C4DC23C17F5800548A10 /* PokemonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0296C4DB23C17F5800548A10 /* PokemonDetailViewModel.swift */; };
 		0296C4DF23C180E600548A10 /* PokemonDetailNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0296C4DE23C180E600548A10 /* PokemonDetailNetworking.swift */; };
-		0296C4E723C2B1E800548A10 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0296C4E623C2B1E800548A10 /* Observable.swift */; };
 		0297D51423BFA7DE001B7087 /* PokemonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297D51323BFA7DE001B7087 /* PokemonListViewModel.swift */; };
 		0297D51723BFACF4001B7087 /* PokemonListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297D51623BFACF4001B7087 /* PokemonListTableViewCell.swift */; };
 		0297D51923BFB364001B7087 /* Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297D51823BFB364001B7087 /* Paging.swift */; };
@@ -22,7 +21,7 @@
 		02C0C29F23BF7E6F000D8C09 /* PokemonListNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C0C29E23BF7E6F000D8C09 /* PokemonListNetworking.swift */; };
 		02C0C2A223BF7FBF000D8C09 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C0C2A123BF7FBF000D8C09 /* Pokemon.swift */; };
 		02C0C2A423BF804C000D8C09 /* PokemonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C0C2A323BF804C000D8C09 /* PokemonResponse.swift */; };
-		36325A38FF3C60F8243CE46B /* Pods_AppNicoMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E829635ED283A0BFDE991F /* Pods_AppNicoMVVM.framework */; };
+		3F681E4330E2581ADE343BB7 /* Pods_AppNicoMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94F377D4A975CCC6FB06974 /* Pods_AppNicoMVVM.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +29,6 @@
 		02639F7A23BFC4480098A823 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 		0296C4DB23C17F5800548A10 /* PokemonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewModel.swift; sourceTree = "<group>"; };
 		0296C4DE23C180E600548A10 /* PokemonDetailNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailNetworking.swift; sourceTree = "<group>"; };
-		0296C4E623C2B1E800548A10 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		0297D51323BFA7DE001B7087 /* PokemonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewModel.swift; sourceTree = "<group>"; };
 		0297D51623BFACF4001B7087 /* PokemonListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListTableViewCell.swift; sourceTree = "<group>"; };
 		0297D51823BFB364001B7087 /* Paging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paging.swift; sourceTree = "<group>"; };
@@ -43,9 +41,9 @@
 		02C0C29E23BF7E6F000D8C09 /* PokemonListNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListNetworking.swift; sourceTree = "<group>"; };
 		02C0C2A123BF7FBF000D8C09 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		02C0C2A323BF804C000D8C09 /* PokemonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonResponse.swift; sourceTree = "<group>"; };
-		8F528B5C6E9074D591C18FF4 /* Pods-AppNicoMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppNicoMVVM.release.xcconfig"; path = "Target Support Files/Pods-AppNicoMVVM/Pods-AppNicoMVVM.release.xcconfig"; sourceTree = "<group>"; };
-		90E829635ED283A0BFDE991F /* Pods_AppNicoMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppNicoMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1E37D8E93FBD9C3EACA16CB /* Pods-AppNicoMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppNicoMVVM.debug.xcconfig"; path = "Target Support Files/Pods-AppNicoMVVM/Pods-AppNicoMVVM.debug.xcconfig"; sourceTree = "<group>"; };
+		03A519C79B5B94FD65101057 /* Pods-AppNicoMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppNicoMVVM.debug.xcconfig"; path = "Target Support Files/Pods-AppNicoMVVM/Pods-AppNicoMVVM.debug.xcconfig"; sourceTree = "<group>"; };
+		B8C4515E1D18B95F5C8DC0C4 /* Pods-AppNicoMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppNicoMVVM.release.xcconfig"; path = "Target Support Files/Pods-AppNicoMVVM/Pods-AppNicoMVVM.release.xcconfig"; sourceTree = "<group>"; };
+		E94F377D4A975CCC6FB06974 /* Pods_AppNicoMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppNicoMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36325A38FF3C60F8243CE46B /* Pods_AppNicoMVVM.framework in Frameworks */,
+				3F681E4330E2581ADE343BB7 /* Pods_AppNicoMVVM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				0297D51823BFB364001B7087 /* Paging.swift */,
-				0296C4E623C2B1E800548A10 /* Observable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -134,7 +131,7 @@
 				02C0C28223BF799C000D8C09 /* AppNicoMVVM */,
 				02C0C28123BF799C000D8C09 /* Products */,
 				EBA790805974ED65A249E4A3 /* Pods */,
-				D5B45D32AEA31A3014A856CD /* Frameworks */,
+				64DE22F3925F158CA2BDAC60 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -229,10 +226,10 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		D5B45D32AEA31A3014A856CD /* Frameworks */ = {
+		64DE22F3925F158CA2BDAC60 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				90E829635ED283A0BFDE991F /* Pods_AppNicoMVVM.framework */,
+				E94F377D4A975CCC6FB06974 /* Pods_AppNicoMVVM.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -240,8 +237,8 @@
 		EBA790805974ED65A249E4A3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A1E37D8E93FBD9C3EACA16CB /* Pods-AppNicoMVVM.debug.xcconfig */,
-				8F528B5C6E9074D591C18FF4 /* Pods-AppNicoMVVM.release.xcconfig */,
+				03A519C79B5B94FD65101057 /* Pods-AppNicoMVVM.debug.xcconfig */,
+				B8C4515E1D18B95F5C8DC0C4 /* Pods-AppNicoMVVM.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -253,11 +250,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02C0C29423BF799C000D8C09 /* Build configuration list for PBXNativeTarget "AppNicoMVVM" */;
 			buildPhases = (
-				188F826F38071FADEF8C8A13 /* [CP] Check Pods Manifest.lock */,
+				6D46F4C03E954C1AB1CFC33B /* [CP] Check Pods Manifest.lock */,
 				02C0C27C23BF799C000D8C09 /* Sources */,
 				02C0C27D23BF799C000D8C09 /* Frameworks */,
 				02C0C27E23BF799C000D8C09 /* Resources */,
-				CC49EFA5AC362C0708D8A6D5 /* [CP] Embed Pods Frameworks */,
+				B8667938FD371D52836412E1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -315,7 +312,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		188F826F38071FADEF8C8A13 /* [CP] Check Pods Manifest.lock */ = {
+		6D46F4C03E954C1AB1CFC33B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -337,7 +334,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CC49EFA5AC362C0708D8A6D5 /* [CP] Embed Pods Frameworks */ = {
+		B8667938FD371D52836412E1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -370,7 +367,6 @@
 				0297D51923BFB364001B7087 /* Paging.swift in Sources */,
 				0297D51723BFACF4001B7087 /* PokemonListTableViewCell.swift in Sources */,
 				0296C4DC23C17F5800548A10 /* PokemonDetailViewModel.swift in Sources */,
-				0296C4E723C2B1E800548A10 /* Observable.swift in Sources */,
 				02C0C28423BF799C000D8C09 /* AppDelegate.swift in Sources */,
 				02639F7B23BFC4480098A823 /* PokemonDetailViewController.swift in Sources */,
 			);
@@ -506,7 +502,7 @@
 		};
 		02C0C29523BF799C000D8C09 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1E37D8E93FBD9C3EACA16CB /* Pods-AppNicoMVVM.debug.xcconfig */;
+			baseConfigurationReference = 03A519C79B5B94FD65101057 /* Pods-AppNicoMVVM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -524,7 +520,7 @@
 		};
 		02C0C29623BF799C000D8C09 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F528B5C6E9074D591C18FF4 /* Pods-AppNicoMVVM.release.xcconfig */;
+			baseConfigurationReference = B8C4515E1D18B95F5C8DC0C4 /* Pods-AppNicoMVVM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

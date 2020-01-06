@@ -6,5 +6,4 @@ target 'AppNicoMVVM' do
   pod 'Alamofire'
   pod 'Kingfisher'
   pod 'RxSwift'
-  pod 'RxCocoa'
 end

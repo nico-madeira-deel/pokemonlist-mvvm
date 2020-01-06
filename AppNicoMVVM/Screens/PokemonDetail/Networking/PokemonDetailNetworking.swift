@@ -13,25 +13,23 @@ protocol PokemonDetailNetworkingProtocol: AnyObject {
     func getPokemonDetail(pokemon: String, completion: @escaping (Result<Pokemon>) -> Void)
 }
 
-
 class PokemonDetailNetworking: PokemonDetailNetworkingProtocol {
     func getPokemonDetail(pokemon: String, completion: @escaping (Result<Pokemon>) -> Void) {
         request("https://pokeapi.co/api/v2/pokemon/\(pokemon)",
             method: .get,
             encoding: URLEncoding.default).responseJSON { response in
-                switch response.result {
-                case .success:
-                    do {
-                        let decoder = JSONDecoder()
-                        let pokemonDetail = try decoder.decode(Pokemon.self, from: response.data!)
-                        completion(Result.success(pokemonDetail))
-                    } catch let error {
-                        print("deu ruim de novo", error)
-                        completion(Result.error(error))
-                    }
-                case .failure(let error):
+            switch response.result {
+            case .success:
+                do {
+                    let decoder = JSONDecoder()
+                    let pokemonDetail = try decoder.decode(Pokemon.self, from: response.data!)
+                    completion(Result.success(pokemonDetail))
+                } catch let error {
                     completion(Result.error(error))
                 }
+            case .failure(let error):
+                completion(Result.error(error))
+            }
         }
     }
 }

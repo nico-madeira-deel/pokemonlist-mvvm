@@ -23,7 +23,6 @@ class PokemonListViewController: UIViewController {
     // MARK: - Lifecyle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         setupBind()
         setupTableView()
         setupFetch()
@@ -38,6 +37,10 @@ class PokemonListViewController: UIViewController {
     private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        
+        // Aqui tu pode adicionar os loaders, da uma olhada no app antigo que tem paginação e refresh da table view
+        // UIRefreshControl para o loader geral da tableView
+        // UIActivityIndicatorView para o loader da paginação
     }
     
     private func setupFetch() {
@@ -83,6 +86,7 @@ extension PokemonListViewController: UITableViewDataSource {
 
 extension PokemonListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        // Coloca esse valor em uma constante protegida local
         return 100
     }
     
