@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1rP-v5-DGL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -10,13 +10,51 @@
         <!--Pokemon Detail View Controller-->
         <scene sceneID="xOZ-Mp-hge">
             <objects>
-                <viewController id="1rP-v5-DGL" customClass="PokemonDetailViewController" customModule="AppNicoMVVM" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HDq-jN-L7W">
+                <viewController storyboardIdentifier="PokemonDetailViewController" id="1rP-v5-DGL" customClass="PokemonDetailViewController" customModule="AppNicoMVVM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="PokemonDetail" id="HDq-jN-L7W">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wUM-HI-GxA">
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Fxc-vN-Lsl"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="T5e-xW-0nm"/>
+                                    <constraint firstAttribute="height" constant="100" id="a1q-8N-Tyv"/>
+                                    <constraint firstAttribute="width" constant="100" id="cXF-Vo-bMo"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDd-ZH-bro">
+                                <rect key="frame" x="10" y="518" width="394" height="0.0"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nd-LO-LYu">
+                                <rect key="frame" x="207" y="528" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1nd-LO-LYu" firstAttribute="centerX" secondItem="CJ0-Kd-t3T" secondAttribute="centerX" id="478-Ab-fRF"/>
+                            <constraint firstItem="eDd-ZH-bro" firstAttribute="centerX" secondItem="wUM-HI-GxA" secondAttribute="centerX" id="4md-Si-vUc"/>
+                            <constraint firstItem="eDd-ZH-bro" firstAttribute="top" secondItem="wUM-HI-GxA" secondAttribute="bottom" constant="20" id="JAH-Az-tgx"/>
+                            <constraint firstItem="CJ0-Kd-t3T" firstAttribute="trailing" secondItem="eDd-ZH-bro" secondAttribute="trailing" constant="10" id="Lbp-9I-g2i"/>
+                            <constraint firstItem="eDd-ZH-bro" firstAttribute="leading" secondItem="CJ0-Kd-t3T" secondAttribute="leading" constant="10" id="TCU-1E-fJ0"/>
+                            <constraint firstItem="1nd-LO-LYu" firstAttribute="top" secondItem="eDd-ZH-bro" secondAttribute="bottom" constant="10" id="hiN-aN-e0E"/>
+                            <constraint firstItem="wUM-HI-GxA" firstAttribute="centerY" secondItem="HDq-jN-L7W" secondAttribute="centerY" id="kuF-wC-YW3"/>
+                            <constraint firstItem="wUM-HI-GxA" firstAttribute="centerX" secondItem="HDq-jN-L7W" secondAttribute="centerX" id="piQ-oy-BcB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CJ0-Kd-t3T"/>
                     </view>
+                    <connections>
+                        <outlet property="pokemonImage" destination="wUM-HI-GxA" id="J6x-K9-JBa"/>
+                        <outlet property="pokemonInfo" destination="1nd-LO-LYu" id="BOE-hC-sNW"/>
+                        <outlet property="pokemonName" destination="eDd-ZH-bro" id="Vi3-aK-Pw8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4I-jq-Qx9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

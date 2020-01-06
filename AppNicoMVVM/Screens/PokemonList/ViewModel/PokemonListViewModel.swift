@@ -19,14 +19,18 @@ protocol PokemonListViewModelProtocol: AnyObject {
 }
 
 class PokemonListViewModel: PokemonListViewModelProtocol {
+    
+    // MARK: - Properties
     var pokemons: [Pokemon] = []
     var networking: PokemonListNetworking
     var reloadTableView: () -> Void = {}
     
+    // MARK: - Lifecycle
     init(networking: PokemonListNetworking) {
         self.networking = networking
     }
     
+    //MARK: - Functions
     func fetchPokemons(offset: Int, limit: Int) {
         networking.getPokemons(offset: offset, limit: limit) { [weak self] result in
             switch result {

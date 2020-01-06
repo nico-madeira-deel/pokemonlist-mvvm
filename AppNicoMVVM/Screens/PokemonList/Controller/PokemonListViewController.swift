@@ -18,14 +18,15 @@ class PokemonListViewController: UIViewController {
     private let networking = PokemonListNetworking()
     private let paging = Paging(limit: 20)
     private let pokemonCellIdentifier = "pokemonCell"
+    private let goToDetailSegueIdentifier = "goToDetail"
     
     // MARK: - Lifecyle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         setupBind()
         setupTableView()
         setupFetch()
+        self.navigationItem.title = "Pokedex"
     }
     
     // MARK: - Functions
@@ -43,6 +44,15 @@ class PokemonListViewController: UIViewController {
         viewModel.fetchPokemons(offset: paging.offset,
                                 limit: paging.limit)
     }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == goToDetailSegueIdentifier,
+            let destination = segue.destination as? PokemonDetailViewController,
+            let pokemon = sender as? Pokemon {
+            destination.pokemon = pokemon
+        }
+    }
 }
 
 extension PokemonListViewController: UITableViewDataSource {
@@ -54,6 +64,7 @@ extension PokemonListViewController: UITableViewDataSource {
         if let unCell = tableView.dequeueReusableCell(withIdentifier: pokemonCellIdentifier, for: indexPath) as? PokemonListTableViewCell,
             let pokemon = viewModel.pokemonPerLine(row: indexPath.row) {
             unCell.pokemon = pokemon
+            unCell.indexPokemon = indexPath.row + 1
             return unCell
         } else {
             return UITableViewCell()
@@ -68,11 +79,17 @@ extension PokemonListViewController: UITableViewDataSource {
             setupFetch()
         }
     }
-
 }
 
 extension PokemonListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        // Coloca esse valor em uma constante protegida local
         return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let unPokemon = viewModel.pokemonPerLine(row: indexPath.row) {
+            performSegue(withIdentifier: goToDetailSegueIdentifier, sender: unPokemon)
+        }
     }
 }
