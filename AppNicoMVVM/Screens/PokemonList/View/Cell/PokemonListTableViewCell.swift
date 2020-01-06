@@ -22,10 +22,17 @@ class PokemonListTableViewCell: UITableViewCell {
         }
     }
     
+    var indexPokemon: Int! {
+        didSet {
+            if let unIndexPokemon = indexPokemon {
+                let name = pokemon.name.capitalizingFirstLetter()
+                pokemonName.text = "#\(unIndexPokemon) \(name)"
+            }
+        }
+    }
+    
     // MARK: - Functions
     func setupCell() {
-        pokemonName.text = pokemon.name
-        
         if let unImageUrl = pokemon.imageUrl,
             let unUrl = URL(string: unImageUrl) {
             let imageResource = ImageResource(downloadURL: unUrl)

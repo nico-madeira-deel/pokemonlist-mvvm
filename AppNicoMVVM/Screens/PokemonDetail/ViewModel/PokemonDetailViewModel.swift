@@ -20,12 +20,14 @@ class PokemonDetailViewModel: PokemonDetailViewModelProtocol {
     var networking: PokemonDetailNetworking
     var pokemonDetail: BehaviorSubject<Pokemon?>
     var errorMessage: BehaviorSubject<Error?>
+    var pokemon: Pokemon
     
     // MARK: - Lifecycle
     init(networking: PokemonDetailNetworking, pokemon: Pokemon) {
         self.networking = networking
         self.pokemonDetail = BehaviorSubject(value: nil)
         self.errorMessage = BehaviorSubject(value: nil)
+        self.pokemon = pokemon
     }
     
     // MARK: - Functions

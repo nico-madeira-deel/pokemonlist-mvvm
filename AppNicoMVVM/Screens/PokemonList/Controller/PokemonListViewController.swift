@@ -26,6 +26,7 @@ class PokemonListViewController: UIViewController {
         setupBind()
         setupTableView()
         setupFetch()
+        self.navigationItem.title = "Pokedex"
     }
     
     // MARK: - Functions
@@ -37,10 +38,6 @@ class PokemonListViewController: UIViewController {
     private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        
-        // Aqui tu pode adicionar os loaders, da uma olhada no app antigo que tem paginação e refresh da table view
-        // UIRefreshControl para o loader geral da tableView
-        // UIActivityIndicatorView para o loader da paginação
     }
     
     private func setupFetch() {
@@ -53,7 +50,6 @@ class PokemonListViewController: UIViewController {
         if segue.identifier == goToDetailSegueIdentifier,
             let destination = segue.destination as? PokemonDetailViewController,
             let pokemon = sender as? Pokemon {
-            print(pokemon.imageUrl)
             destination.pokemon = pokemon
         }
     }
@@ -68,6 +64,7 @@ extension PokemonListViewController: UITableViewDataSource {
         if let unCell = tableView.dequeueReusableCell(withIdentifier: pokemonCellIdentifier, for: indexPath) as? PokemonListTableViewCell,
             let pokemon = viewModel.pokemonPerLine(row: indexPath.row) {
             unCell.pokemon = pokemon
+            unCell.indexPokemon = indexPath.row + 1
             return unCell
         } else {
             return UITableViewCell()
