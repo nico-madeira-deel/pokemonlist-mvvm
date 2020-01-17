@@ -30,6 +30,11 @@ class PokemonDetailViewController: UIViewController {
         setupFetch()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupAccessibilityAndLocalization()
+    }
+    
     // MARK: - Functions
     private func setupBind() {
         viewModel = PokemonDetailViewModel(networking: networking, pokemon: pokemon)
@@ -39,9 +44,8 @@ class PokemonDetailViewController: UIViewController {
             let formatPokemonName = unPokemon.name.capitalizingFirstLetter()
             self?.pokemonName.text = formatPokemonName
             self?.navigationItem.title = formatPokemonName
-            if let unHeightPokemon = unPokemon.height,
-                let unWeigthPokemon = unPokemon.weight {
-                self?.pokemonInfo.text = "Height: \(unHeightPokemon)  \nWeight: \(unWeigthPokemon)"
+            if let unHeightPokemon = unPokemon.height {
+                self?.pokemonInfo.text = "Height: \(unHeightPokemon)"
             }
             
             if let unImageUrlGif = self?.pokemon.imageUrlGif,
@@ -64,5 +68,14 @@ class PokemonDetailViewController: UIViewController {
     
     private func setupFetch() {
         viewModel.fetchPokemonDetail()
+    }
+    
+    private func setupAccessibilityAndLocalization() {
+        pokemonInfo.accessibilityIdentifier = AccessibilityIdentifier.pokemonInfo.rawValue
+        pokemonName.accessibilityIdentifier = AccessibilityIdentifier.pokemonName.rawValue
+        pokemonImage.accessibilityIdentifier = AccessibilityIdentifier.pokemonImage.rawValue
+        pokemonInfo.isAccessibilityElement = true
+        pokemonName.isAccessibilityElement = true
+        pokemonImage.isAccessibilityElement = true
     }
 }

@@ -27,6 +27,8 @@ class PokemonListViewController: UIViewController {
         setupTableView()
         setupFetch()
         self.navigationItem.title = "Pokedex"
+        tableView.accessibilityIdentifier = AccessibilityIdentifier.pokemonListTableView.rawValue
+        tableView.isAccessibilityElement = true
     }
     
     // MARK: - Functions
@@ -63,6 +65,8 @@ extension PokemonListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let unCell = tableView.dequeueReusableCell(withIdentifier: pokemonCellIdentifier, for: indexPath) as? PokemonListTableViewCell,
             let pokemon = viewModel.pokemonPerLine(row: indexPath.row) {
+            unCell.accessibilityIdentifier = "\(AccessibilityIdentifier.detailPokemonTableCell.rawValue)\(indexPath.row)"
+            unCell.isAccessibilityElement = true
             unCell.pokemon = pokemon
             unCell.indexPokemon = indexPath.row + 1
             return unCell
